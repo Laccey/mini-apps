@@ -1,0 +1,6 @@
+<text>{{message}}</text>
+<view>
+	<view wx:for="{{list}}">
+		<text>{{item.title}}</text>
+	</view>
+</view>

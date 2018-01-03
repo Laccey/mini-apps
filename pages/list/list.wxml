@@ -1,6 +1,11 @@
-<text>{{message}}</text>
+<text>{{title}}</text>
 <view>
 	<view wx:for="{{list}}">
 		<text>{{item.title}}</text>
+		<text>
+			<block wx:for="{{item.directors}}">
+				{{item.name}}
+			</block>
+		</text>
 	</view>
 </view>

@@ -1,13 +1,40 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <view class="slide">
+    <swiper indicator-dots="true" autoplay="true" interval="8000" duration="1000">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" mode="aspectFill"/>
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="board">
+    <block wx:for="{{boards}}">
+      <navigator url="../list/list?type={{item.type}}&name={{item.name}}" hover-class="none">
+          <view class="board-item">
+            <text>{{item.name}}</text>
+            <image src="../../images/arrowright.png" mode="aspectFill" />
+          </view>  
+      </navigator>
+    </block>
+    <!-- <navigator url="../list/list?type=coming_soon&name=即将上映" hover-class="none">
+      <view class="board-item">
+        <text>即将上映</text>
+        <image src="../../images/arrowright.png" mode="aspectFill" />
+      </view>
+    </navigator>
+    <navigator url="../list/list?type=top250&name=Top250" hover-class="none">
+      <view class="board-item">
+        <text>Top250</text>
+        <image src="../../images/arrowright.png" mode="aspectFill" />
+      </view>
+    </navigator>
+    <navigator url="../list/list?type=us_box&name=北美电影榜" hover-class="none">
+      <view class="board-item">
+        <text>北美电影榜</text>
+        <image src="../../images/arrowright.png" mode="aspectFill" />
+      </view>
+    </navigator> -->
   </view>
 </view>

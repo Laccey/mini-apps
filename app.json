@@ -10,5 +10,31 @@
     "navigationBarBackgroundColor": "#354951",
     "navigationBarTitleText": "豆瓣电影",
     "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#ccc",
+    "selectedColor": "#35495e",
+    "borderStyle": "white",
+    "backgroundColor": "#f9f9f9",
+    "list": [
+     {
+      "text": "首页",
+      "pagePath": "pages/index/index",
+      "iconPath": "images/home.png",
+      "selectedIconPath": "images/home-actived.png"
+     },
+     {
+      "text": "目录",
+      "pagePath": "pages/list/list",
+      "iconPath": "images/note.png",
+      "selectedIconPath": "images/note-actived.png"
+     },
+     {
+      "text": "我的",
+      "pagePath": "pages/item/item",
+      "iconPath": "images/profile.png",
+      "selectedIconPath": "images/profile-actived.png"
+     }
+    ]
   }
 }
